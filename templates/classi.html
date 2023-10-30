@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+        body {
+            background-image: url('https://i.postimg.cc/MpWbJV41/Final-forest.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: hwb(0 100% 0%);
+            padding-top: 20px;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 85%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algerian Forest Fire Prediction</h1>
+    
+    <form action= {{ url_for ('Sclassi_prediction') }} method="post">
+        <h2>{{prediction_text}}</h2>
+        <label for="field1">Temperature:</label>
+        <input type="text" id="Temperature" name="Temperature" required>
+
+        <label for="field1">RH:</label>
+        <input type="text" id="RH" name="RH" required>
+
+        <label for="field2">Ws:</label>
+        <input type="text" id="Ws" name="Ws" required>
+
+        <label for="field3">Rain:</label>
+        <input type="text" id="Rain" name="Rain" required>
+        
+        <label for="field4">FFMC :</label>
+        <input type="text" id="FFMC" name="FFMC" required>
+
+        <label for="field5">DMC:</label>
+        <input type="text" id="DMC" name="DMC" required>
+
+        <label for="field6">DC:</label>
+        <input type="text" id="DC" name="DC" required>
+
+        <label for="field7">ISI:</label>
+        <input type="text" id="ISI" name="ISI" required>
+
+        <label for="field8">FWI:</label>
+        <input type="text" id="FWI" name="FWI" required>
+        
+        <label for="field9">Region:</label>
+        <input type="text" id="Region" name="Region" required>
+        
+        
+
+        <button type="submit" class ="btn btn-primary btn-block btn-large "> Predict
+            
+
+        </button>
+        
+    </form>
+
+</body>
+</html>
